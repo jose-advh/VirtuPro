@@ -3,44 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>VirtuPro</title>
+    <link rel="stylesheet" href="frontend/css/styles.css">
 </head>
 <body>
-    <form id="loginForm">
-        <input type="text" id="identificacion" placeholder="Identificación" required>
-        <input type="password" id="password" placeholder="Contraseña" required>
-        <button type="submit">Iniciar sesión</button>
-    </form>
-
-    <script>
-        document.getElementById('loginForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-
-            const identificacion = document.getElementById('identificacion').value;
-            const password = document.getElementById('password').value;
-
-            try {
-                const response = await fetch('http://localhost:3000/auth', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ identificacion, password }),
-                });
-
-                const data = await response.json();
-
-                if (data.success) {
-                    alert(data.message);
-                    window.location.href = data.redirect; // Redirige a la página del frontend
-                } else {
-                    alert(data.message); // Muestra el error
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                alert('Hubo un problema al iniciar sesión');
-            }
-        });
-    </script>
+    <header class="header">
+        <img src="frontend/imgs/logo_virtupro.png" class="main__img" alt="Logo de la empresa virtupro">
+        <nav class="header__nav">
+            <ul class="header__lista">
+                <li><a href="#" class="header__item">NOSOTROS</a></li>
+                <li><a href="frontend/pages/login.html" class="header__item header__button">INGRESAR</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main main--index">
+        <section class="main__virtupro">
+            <h1 class="main__titulo">VIRTU<span style="color:aqua">PRO</span></h1>
+            <p class="main__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto facere ab et ipsum a similique quae corporis deserunt ratione, possimus tempore autem nihil fugit unde commodi. Quos qui exercitationem dolorem.
+            </p>
+            <article class="main__buttons">
+              <a href="#" class="main__button">VER CUESTIONARIOS</a>
+            </article>
+        </section>
+    </main>
+    <footer class="footer"></footer>
 </body>
 </html>

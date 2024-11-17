@@ -1,6 +1,7 @@
 document.getElementById('loginForm').addEventListener('submit', async (e) => {
     e.preventDefault();
 
+    const elemento = document.getElementById('formError');
     const identificacion = document.getElementById('identificacion').value;
     const password = document.getElementById('password').value;
 
@@ -16,10 +17,9 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
         const data = await response.json();
 
         if (data.success) {
-            alert(data.message);
             window.location.href = data.redirect; // Redirige a la página del frontend
         } else {
-            alert(data.message); // Muestra el error
+            elemento.innerText = data.message;
         }
     } catch (error) {
         console.error('Error:', error);

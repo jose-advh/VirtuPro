@@ -4,14 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-    <form id="loginForm" action="http://localhost:3000/auth" method="POST">
-        <input type="text" id="identificacion" placeholder="Identificación" required>
-        <input type="password" id="password" placeholder="Contraseña" required>
-        <button type="submit">Iniciar sesión</button>
-    </form>
-
+    <section class="contenedor">
+        <form id="loginForm" action="http://localhost:3000/auth" method="POST" class="form">
+            <h2 class="form__title">Inicio de Sesión</h2>
+            <article class="form__input">
+                <input type="text" id="identificacion" placeholder="Identificación" class="form__item" required>
+                <input type="password" id="password" placeholder="Contraseña" class="form__item" required>
+            </article>
+            <span id="formError"></span>
+            <button type="submit" class="form__button">Iniciar sesión</button>
+            <p>¿Aún no tienes cuenta? <a href="#">Crea una aquí</a></p>
+        </form>
+    </section>
     <script src="../js/login.js"></script>
 </body>
 </html>
