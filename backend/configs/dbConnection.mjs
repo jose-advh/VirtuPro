@@ -1,12 +1,14 @@
 import mysql from 'mysql2/promise';
 
-async function connect() {
+
+export default async function connect() {
     try {
         const connection = await mysql.createConnection({
             host: 'localhost',
             user: 'root',
             password: '',
-            database: 'virtupro_db'
+            database: 'virtupro_db',
+            port: 3306
         });
         console.log('Conexión a MySQL establecida.');
         return connection;
@@ -15,5 +17,3 @@ async function connect() {
         throw error;
     }
 }
-
-export default connect;

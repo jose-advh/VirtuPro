@@ -1,15 +1,34 @@
-import connect from './configs/dbConnection.mjs';
+import express from 'express';
+import session from 'express-session';
+import path from 'path';
+import cors from 'cors';
 
-async function fetchData() {
-    const db = await connect();
-    try {
-        const [rows, fields] = await db.execute('SELECT * FROM empleados')
-        console.log('todos los empleados:', rows);
-    } catch (error) {
-        console.error('error al obtener datos:', error);
-    } finally {
-        db.end();
-    }
-} 
 
-fetchData();
+const app = express();
+const PORT = 3000;
+
+
+app.use(cors());
+
+// Procesar datos del cliente
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true })); // Procesar forms
+
+// Configuración de las sesiones
+
+app.use(session({
+    secret: 'secreto',
+    resave: false,
+    saveUninitialized: true,
+}));
+
+//Rutas 
+
+app.use(express.static(path.join(process.cwd(), 'frontend')));
+
+// Iniciar el servidor
+
+app.listen(PORT, () => {
+    console.log(`Servidor corriendo en http://localhost:${PORT}`);
+});
