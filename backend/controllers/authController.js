@@ -14,7 +14,7 @@ const login = async (req, res) => {
                 req.session.loggedin = true;
                 req.session.username = identificacion;
 
-                res.status(200).json({ success: true, message: 'Login exitoso'});
+                res.json({ success: true, redirect: 'http://localhost:5500/frontend/pages/panel.html' });
             } else {
                 res.status(401).json({ success: false, message: 'Usuario o contraseña incorrecta'});
             }

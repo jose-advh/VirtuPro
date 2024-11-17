@@ -2,11 +2,11 @@ import express from 'express';
 import session from 'express-session';
 import path from 'path';
 import cors from 'cors';
+import authController from './controllers/authController.js';
 
 
 const app = express();
 const PORT = 3000;
-
 
 app.use(cors());
 
@@ -23,9 +23,13 @@ app.use(session({
     saveUninitialized: true,
 }));
 
-//Rutas 
 
 app.use(express.static(path.join(process.cwd(), 'frontend')));
+
+
+//Rutas 
+
+app.post('/auth', authController.login)
 
 // Iniciar el servidor
 
