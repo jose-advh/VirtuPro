@@ -3,6 +3,7 @@ import session from 'express-session';
 import path from 'path';
 import cors from 'cors';
 import authController from './controllers/authController.js';
+import registerController from './controllers/registerController.js';
 
 
 const app = express();
@@ -30,6 +31,7 @@ app.use(express.static(path.join(process.cwd(), 'frontend')));
 //Rutas 
 
 app.post('/auth', authController.login)
+app.post('/register', registerController.register)
 
 // Iniciar el servidor
 

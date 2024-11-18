@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VirtuPro - Register</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="body--form">
+    <article class="contenedor">
+        <form action="http://localhost:3000/auth" method="POST" class="form form--register">
+            <h1 class="form__title">Registro de Usuarios</h1>
+            <section class="form__input">
+                <article class="form__column">
+                    <input type="number" placeholder="Identificación" class="form__item" name="identificacion">
+                    <input type="text" placeholder="Nombres" class="form__item" name="nombres">
+                    <input type="text" placeholder="Apellidos" class="form__item" name="apellidos">
+                    <input type="password" placeholder="Contraseña" class="form__item" name="password">
+                </article>
+                <article class="form__row">
+                    <label for="fechaNac">Fecha de Nacimiento</label>
+                    <input type="date" class="form__item" name="fechaNac">
+                </article>
+                <input type="text" class="form__item" placeholder="Lugar de Nacimiento" name="lugarNac">
+
+                <article class="form__column">
+                    <input type="text" class="form__item" placeholder="Dirección" name="direccion">
+                    <input type="number" class="form__item" placeholder="Télefono" name="telefono">
+                    <input type="email" class="form__item" placeholder="Correo Electronico" name="email">
+                    <input type="text" class="form__item" placeholder="Motivo de visita" name="motivoVisita">
+                    <textarea name="observaciones" class="form__textarea" placeholder="Observaciones"></textarea>
+                </article>  
+            </section>
+        </form>
+    </article>
+</body>
+</html>
