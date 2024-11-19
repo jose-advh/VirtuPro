@@ -9,14 +9,16 @@
 <body class="body--form">
     <section class="contenedor">
         <form id="loginForm" action="http://localhost:3000/auth" method="POST" class="form">
+            <a href="/index.html">Regresar</a>
             <h2 class="form__title">Inicio de Sesión</h2>
-            <article class="form__input">
-                <input type="text" id="identificacion" placeholder="Identificación" class="form__item" required>
-                <input type="password" id="password" placeholder="Contraseña" class="form__item" required>
+            <img src="../imgs/logo_virtupro.png" class="header__img" alt="">
+            <article class="form__input form__input--login">
+                    <input type="text" id="identificacion" placeholder="Identificación" class="form__item" required>
+                    <input type="password" id="password" placeholder="Contraseña" class="form__item" required>
             </article>
             <span id="formError"></span>
             <button type="submit" class="form__button">Iniciar sesión</button>
-            <p>¿Aún no tienes cuenta? <a href="#">Crea una aquí</a></p>
+            <p class="form__p">¿Aún no tienes cuenta? <a href="#">Crea una aquí</a></p>
         </form>
     </section>
     <script src="../js/login.js"></script>

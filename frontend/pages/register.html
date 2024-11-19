@@ -8,30 +8,36 @@
 </head>
 <body class="body--form">
     <article class="contenedor">
-        <form action="http://localhost:3000/auth" method="POST" class="form form--register">
+        <form id="registerForm" class="form form--register">
+            <a href="../../index.html">Regresar</a>
             <h1 class="form__title">Registro de Usuarios</h1>
             <section class="form__input">
                 <article class="form__column">
-                    <input type="number" placeholder="Identificación" class="form__item" name="identificacion">
-                    <input type="text" placeholder="Nombres" class="form__item" name="nombres">
-                    <input type="text" placeholder="Apellidos" class="form__item" name="apellidos">
-                    <input type="password" placeholder="Contraseña" class="form__item" name="password">
-                </article>
-                <article class="form__row">
-                    <label for="fechaNac">Fecha de Nacimiento</label>
-                    <input type="date" class="form__item" name="fechaNac">
-                </article>
-                <input type="text" class="form__item" placeholder="Lugar de Nacimiento" name="lugarNac">
-
-                <article class="form__column">
-                    <input type="text" class="form__item" placeholder="Dirección" name="direccion">
-                    <input type="number" class="form__item" placeholder="Télefono" name="telefono">
-                    <input type="email" class="form__item" placeholder="Correo Electronico" name="email">
-                    <input type="text" class="form__item" placeholder="Motivo de visita" name="motivoVisita">
-                    <textarea name="observaciones" class="form__textarea" placeholder="Observaciones"></textarea>
+                    <input type="number" placeholder="Identificación" id="identificacion" class="form__item" name="identificacion">
+                    <input type="text" placeholder="Nombres" id="nombres" class="form__item" name="nombres">
+                    <input type="text" placeholder="Apellidos" id="apellidos" class="form__item" name="apellidos">
+                    <input type="email" placeholder="Correo Electronico" id="correo" class="form__item" name="correo">
+                    <input type="text" placeholder="Direccion" id="direccion" class="form__item" name="direccion">
+                    <input type="text" placeholder="Lugar de Nacimiento" id="lugarNac" class="form__item" name="lugarNac">
+                    <section class="form__row">
+                        <label for="fechaNac">Fecha de Nacimiento</label>
+                        <input type="date" placeholder="Fecha de Nacimiento" id="fechaNac" class="form__item" name="fechaNac">
+                    </section>
                 </article>  
+                <article class="form__column">
+                    <input type="password" placeholder="Contraseña" id="password" class="form__item" name="password">
+                    <input type="number" placeholder="Telefono" id="telefono" class="form__item" name="telefono">
+                    <input type="text" placeholder="Motivo de Visita" id="motivoVisita" class="form__item" name="motivoVisita">
+                    <label for="observacion">Observacion</label>
+                    <textarea name="observacion" class="form__textarea" id="observacion"></textarea>
+                </article>
             </section>
+            <p id="formError"></p>
+            <button type="submit" class="form__button">Registrarme</button>
+
         </form>
     </article>
+
+    <script src="../js/register.js"></script>
 </body>
 </html>

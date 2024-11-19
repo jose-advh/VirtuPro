@@ -17,7 +17,7 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
         const data = await response.json();
 
         if (data.success) {
-            window.location.href = data.redirect; // Redirige a la página del frontend
+            window.location.href = data.redirect; 
         } else {
             formError.innerText = data.message;
         }

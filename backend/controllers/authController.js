@@ -1,4 +1,6 @@
 import connect from '../configs/dbConnection.mjs';
+import bcrypt from 'bcrypt';
+
 
 const login = async (req, res) => {
     const { identificacion, password } = req.body;
@@ -7,17 +9,24 @@ const login = async (req, res) => {
         try {
             const db = await connect();
             const [results] = await db.execute(
-                'SELECT * FROM empleados WHERE identificacion = ? AND contraseña = ?', [identificacion, password]
+                'SELECT * FROM empleados WHERE identificacion = ?', [identificacion]
             );
 
             if (results.length > 0) {
-                req.session.loggedin = true;
-                req.session.username = identificacion;
+                const user = results[0]
+
+                const contraseñaCorrecta = await bcrypt.compare(password, user.contraseña);
+
+                if (contraseñaCorrecta) {
+                    req.session.loggedin = true;
+                    req.session.username = identificacion;
 
                 res.json({ success: true, redirect: 'http://localhost:5500/frontend/pages/panel.html' });
-            } else {
-                res.status(401).json({ success: false, message: 'Usuario o contraseña incorrecta'});
-            }
+
+                } else {
+                    res.status(401).json({ success: false, message: 'Usuario o contraseña incorrecta'});
+            } 
+          }
         } catch (error) {
             console.error('error en el login:', error);
             res.status(500).json({success: false, message: 'error interno del servidor'});

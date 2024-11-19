@@ -10,8 +10,6 @@
 }
 
 .body--form {
-    background-repeat: no-repeat;
-    background-size: cover;
     background: #00ffff;
     background: -webkit-linear-gradient(to right bottom, #008cff, #00ffbf, #1e48ff);
     background: linear-gradient(to right bottom, #4e8ddf, #00ffbf, #1100ff);
@@ -22,11 +20,12 @@
     display: flex;
     align-items: center;
     height: 100vh;
+    padding: 1rem;
 }
 
 .form {
-    width: 35%;
-    height: 70vh;
+    width: auto;
+    height: 80vh;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -34,14 +33,13 @@
     align-items: center;
     text-align: center;
     gap: 15px;
-
+    padding: 3rem;
     background-color: white;
     box-shadow: 2px, 2px, 3px rgba(0, 0, 0, .8);
     border-radius: 15px;
 }
 
 .form--register {
-    padding: 1rem;
     height: auto !important;
 }
 
@@ -61,9 +59,13 @@
 
 .form__input {
     display: flex;
-    flex-direction: column;
     gap: 15px;
     width: 80%;
+}
+
+.form__input--login {
+    display: flex !important;
+    flex-direction: column !important;
 }
 
 .form__item {
@@ -81,12 +83,18 @@
 
 }
 
+.form__p {
+    padding: 1rem;
+}
+
 #formError {
     color: red;
 }
 
 .form__textarea {
-    height: 15vh;
+    width: 10rem;
+    height: 25vh;
+    resize: none;
 }
 
 .form__button {
@@ -194,6 +202,8 @@
 @media (max-width: 900px) {
     .header {
         padding: 1rem;
+        flex-direction: column;
+        line-height: 20px;
     }
 
     .header__nav {
@@ -201,7 +211,8 @@
     }
 
     .header__img {
-        display: none;
+        padding-top: 2.5rem;
+        order: 2;
     }
 
     .header__button {
@@ -219,9 +230,24 @@
     .main__text {
         width: 90%;
     }
+
+    .form__input {
+        flex-direction: column;
+    }
+
+    .form__textarea {
+        padding: 20px;
+        margin: auto;
+        width: 90%;
+        border: 1px solid;
+    }
 }
 
 @media (max-width: 350px) {
+    .header__img {
+        display: none;
+    }
+
     .header__item {
         font-size: .6rem;
         font-weight: 600;
