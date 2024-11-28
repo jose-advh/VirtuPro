@@ -288,7 +288,7 @@
     background-attachment: fixed;
 }
 
-.info__section:last-child {
+.info__section:last-child { 
     width: 90%;
     margin: auto;
 }
