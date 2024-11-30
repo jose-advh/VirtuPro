@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Preguntas</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="body--cuestionario">
+    <header class="header header--cuestionario">
+            <h1>Seguridad Laboral</h1>
+            <p id="numeroPregunta"></p>
+    </header>
+    <main class="main--cuestionario">
+        <article id="cuestionario">
+            <div id="contenedor-pregunta"></div>
+            <section class="main__resultado">
+                <p id="resultado"></p>
+                <button id="siguiente" style="display:none;">Siguiente Pregunta</button>
+            </section>
+        </article>
+        <article class="resultado_final ocultar" id="resultadoFinal">
+            <h2>RESULTADO OBTENIDO</h2>
+            <img src="../imgs/logo_virtupro.png" class="header__img" alt="">
+            <h3>Respuestas correctas: <span id="preguntasCorrectas"></span></h3>
+            <a href="panel.html">Volver al Menú</a>
+        </article>
+    </main>
+
+    <script src="../js/preguntas.js"></script> 
+</body>
+</html>

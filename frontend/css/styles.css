@@ -9,6 +9,10 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+.body--cuestionario {
+    background-color: #F5F5F5;
+}
+
 .body--nosotros{
     background-color: #F5F5F5;
 }
@@ -129,6 +133,12 @@
     position: fixed;
 }
 
+.header--center {
+    background-color: white;
+    text-align: center !important;
+    justify-content: center;
+}
+
 .header__nav {
     padding: 1rem;
     background-color: white;
@@ -160,6 +170,16 @@
     align-items: center;
 }
 
+
+.main--top {
+    display: flex;
+    width: 90%;
+    margin: auto;
+    flex-direction: column;
+    padding-top: 3rem !important;
+    gap: 15px;
+}
+
 .main--index {
     height: 100vh;
     width: 100%;
@@ -167,6 +187,13 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+.main__title {
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: black;
+}
+
 
 .main__virtupro {
     display: flex;
@@ -202,61 +229,6 @@
     color: white;
     border-radius: 15px;
     background-color: blue;
-}
-
-@media (max-width: 900px) {
-    .header {
-        padding: 1rem;
-        flex-direction: column;
-        line-height: 20px;
-    }
-
-    .header__nav {
-        margin: auto;
-    }
-
-    .header__img {
-        padding-top: 2.5rem;
-        order: 2;
-    }
-
-    .header__button {
-        padding: .8rem;
-    }    
-
-    .header__item {
-        font-size: .7rem;
-    }
-
-    .main__titulo {
-        font-size: 4rem;
-    }
-
-    .main__text {
-        width: 90%;
-    }
-
-    .form__input {
-        flex-direction: column;
-    }
-
-    .form__textarea {
-        padding: 20px;
-        margin: auto;
-        width: 90%;
-        border: 1px solid;
-    }
-}
-
-@media (max-width: 350px) {
-    .header__img {
-        display: none;
-    }
-
-    .header__item {
-        font-size: .6rem;
-        font-weight: 600;
-    }
 }
 
 /* PAGINA NOSOTROS */
@@ -346,11 +318,253 @@
     text-align: center;
 }
 
-.card__content {
+.card__contentp {
     
 }
 
 .card__img {
     border-radius: 5px;
     width: 100%;
+}
+
+/* PANEL */
+
+.main__riesgos {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 50vh;
+}
+
+.riesgos__item > a {
+    font-weight: 900;
+    font-size: 2rem;
+    transition: .5s;
+}
+
+.riesgos__title {
+    font-weight: 900;
+}
+
+
+.riesgos__item > a:hover {
+    color: gray;
+}
+
+.main__proteccion {
+    display: flex;
+    width: 30%;
+    flex-direction: column;
+    border-radius: 15px;
+    gap: 5px;
+}
+
+.proteccion__item {
+    text-align: center;
+    font-weight: 900;
+    font-size: 1.2rem;
+    padding: .5rem;
+    color: white;
+    background-color: black;
+}
+
+.rojo {
+    color: red;
+}
+
+.amarillo {
+    color: yellow;
+}
+
+.azul {
+    color: blue;
+}
+
+
+/* EXAMEN */
+
+/* body { font-family: Arial, sans-serif; padding: 20px; }
+.pregunta { margin-bottom: 20px; }
+.opcion { display: block; margin: 5px 0; }
+#resultado { font-weight: bold; margin-top: 20px; } */
+
+.green {
+    background-color: #00ffbf !important;
+}
+
+.main--cuestionario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+#contenedor-pregunta {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 50%;
+    margin: auto;
+}
+
+#contenedor-pregunta > button {
+    padding: .8rem;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 4px 6px rgba(0, 0, 0, .1);
+    transition: .5s;
+}
+
+#contenedor-pregunta > button:hover {
+    transform: scale(1.1);
+}
+
+#siguiente {
+    width: 20%;
+    margin: auto;
+    display: flex;
+    cursor: pointer;
+    border: none;
+    color: white;
+    font-weight: 700;
+    background-color: orange;
+    border-radius: 15px;
+    padding: .8rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 4px 6px rgba(0, 0, 0, .1);
+    transition: .5s;
+}
+
+.main__resultado {
+    display: flex;
+    align-items: center;    
+    flex-direction: column;
+    gap: 15px;
+}
+
+#resultado {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+#siguiente:hover {
+    transform: scale(1.1);
+}
+
+#numeroPregunta {
+    font-size: 1.1rem;
+    font-weight: 900;
+}
+
+#cuestionario {
+    padding-top: 4rem;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+ 
+
+.resultado_final {
+    width: 50%;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 4px 6px rgba(0, 0, 0, .1);
+}
+
+
+
+.ocultar {
+    display: none !important;
+}
+
+@media (max-width: 900px) {
+    .header {
+        padding: 1rem;
+        flex-direction: column;
+        line-height: 20px;
+    }
+
+    .header--cuestionario {
+        gap: 15px !important;
+    }
+
+    .header__nav {
+        margin: auto;
+    }
+
+    .header__img {
+        padding-top: 2.5rem;
+        order: 2;
+    }
+
+    .header__button {
+        padding: .8rem;
+    }    
+
+    .header__item {
+        font-size: .7rem;
+    }
+
+    .main__titulo {
+        font-size: 4rem;
+    }
+
+    .main__text {
+        width: 90%;
+    }
+
+    .form__input {
+        flex-direction: column;
+    }
+
+    .form__textarea {
+        padding: 20px;
+        margin: auto;
+        width: 90%;
+        border: 1px solid;
+    }
+
+    #contenedor-pregunta {
+        text-align: center;
+        width: 90%;
+    }
+
+    #siguiente {
+        width: 50%;
+    }
+
+    .resultado_final {
+        width: 90%;
+    }
+
+    .main__proteccion {
+        width: 80%;
+    }
+}
+
+@media (max-width: 350px) {
+    .header__img {
+        display: none;
+    }
+
+    .header__item {
+        font-size: .6rem;
+        font-weight: 600;
+    }
+
+    .main__riesgos {
+        height: 90vh;
+    }
 }
