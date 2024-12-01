@@ -23,7 +23,7 @@ const register = async (req, res) => {
 
             // Insertar nuevo usuario en la bd
             const [result] = await db.execute(
-                'INSERT INTO empleados (identificacion, nombres, apellidos, correo, contraseña, direccion, telefono, fecha_nacimiento) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', [identificacion, nombres, apellidos, correo, hashedPassword, direccion, telefono, fechaNac]
+                'INSERT INTO empleados (identificacion, nombres, apellidos, correo, contrasena, direccion, telefono, fecha_nac) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', [identificacion, nombres, apellidos, correo, hashedPassword, direccion, telefono, fechaNac]
             );
 
             res.status(201).json({ success: true, message: 'Usuario registrado correctamente'});

@@ -3,9 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Capacitación - Virtupro</title>
+    <link rel="stylesheet" href="../css/riesgos.css">
 </head>
-<body>
-    
+<body class="pagina--riesgos">
+    <header class="header">
+        <div class="header__contenido">
+            <nav class="menu">
+                <button class="menu__toggle" aria-label="Abrir menú">
+                    <span class="menu__icon"><img src="../imgs/icono_menu.png" alt="Menú"></span>
+                </button>
+                <img src="../imgs/logo_virtupro.png" class="header__img" alt="">
+                <ul class="menu__lista">
+                    <li class="menu__item"><a href="#riesgosSalud" class="menu__enlace">Riesgos Salud</a></li>
+                    <hr>
+                    <li class="menu__item"><a href="#riesgosInflamabilidad" class="menu__enlace">Riesgos de Inflamabilidad</a></li>
+                    <hr>
+                    <li class="menu__item"><a href="#riesgosReactividad" class="menu__enlace">Riesgos Reactividad</a></li>
+                    <hr>
+                    <li class="menu__item"><a href="panel.html" class="menu__enlace rojo">Volver Panel</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="contenido">
+        <article class="riesgos" id="riesgosSalud">
+            <header class="riesgos__encabezado">
+                <h3 class="riesgos__titulo">Riesgos para la Salud</h3>
+                <h3 class="riesgos__color riesgos__color--azul">Azul</h3>
+            </header>
+
+            <section class="riesgos__contenido">
+                <article class="riesgos__item">
+                    <h2 class="riesgos__nivel azul">4</h2>
+                    <p class="riesgos__descripcion">
+                        Materiales que con solo una muy corta exposción pueden causar la muerte o daño permanente aun en caso de atención médica inmediata.
+                    </p>
+                </article>
+                <article class="riesgos__item">
+                    <h2 class="riesgos__nivel azul">3</h2>
+                    <p class="riesgos__descripcion">
+                        Materiales que bajo una corta exposición pueden causar daños temproales o permanentes aunque se de pronta atención médica.
+                    </p>
+                </article>
+                <article class="riesgos__item">
+                    <h2 class="riesgos__nivel azul">2</h2>
+                    <p class="riesgos__descripcion">
+                        Materiales que bajo su exposición intensa o continua puede causar incapacidad temporal o posibles daños permanentes. a menos que se de tratamiento médico rápido.
+                    </p>
+                </article>
+                <article class="riesgos__item">
+                    <h2 class="riesgos__nivel azul">1</h2>
+                    <p class="riesgos__descripcion">
+                        Materiales que bajo su exposición causan irritación, pero solo daños residuales menores aun en ausencia de tratamiento medico.
+                    </p>
+                </article>
+                <article class="riesgos__item">
+                    <h2 class="riesgos__nivel azul">0</h2>
+                    <p class="riesgos__descripcion">
+                        Materales que bajo su exposición en condiciones de incendio no ofrecen otro peligo que el de material combustible ordinario.
+                    </p>
+                </article>
+            </section>
+        </article>
+
+        <article class="riesgos" id="riesgosInflamabilidad">
+            <header class="riesgos__encabezado">
+                <h3 class="riesgos__titulo">Riesgos de Inflamabilidad</h3>
+                <h3 class="riesgos__color rojo">Rojo</h3>
+            </header>
+
+            <section class="riesgos__contenido">
+                <article class="riesgos__item">
+                    <h2 class="riesgos__nivel rojo">4</h2>
+                    <p class="riesgos__descripcion">
+                        Materiales que se vaporizan rápida o completamente a la temperatura y presión atmosférica ambiental, o que se dispersen y se quemen facilmente en el aire.
+                    </p>
+                </article>
+                <article class="riesgos__item">
+                    <h2 class="riesgos__nivel rojo">3</h2>
+                    <p class="riesgos__descripcion">
+                        Líquidos sólidos que pueden encenderse en casi todas las condiciones de temperatura ambiental.
+                    </p>
+                </article>
+                <article class="riesgos__item">
+                    <h2 class="riesgos__nivel rojo">2</h2>
+                    <p class="riesgos__descripcion">
+                        Materiales que deben calentarse moderadamente o exponerse a temperaturas altas antes de que ocurra la ignación.
+                    </p>
+                </article>
+                <article class="riesgos__item">
+                    <h2 class="riesgos__nivel rojo">1</h2>
+                    <p class="riesgos__descripcion">
+                        Materiales que deben precalentarse antes de que la ignición ocurra.
+                    </p>
+                </article>
+                <article class="riesgos__item">
+                    <h2 class="riesgos__nivel rojo">0</h2>
+                    <p class="riesgos__descripcion">
+                        Materiales que no se queman.
+                    </p>
+                </article>
+            </section>
+        </article>
+
+        <article class="riesgos" id="riesgosReactividad">
+            <header class="riesgos__encabezado">
+                <h3 class="riesgos__titulo">Riesgos por Reactividad</h3>
+                <h3 class="riesgos__color amarillo">Amarillo</h3>
+            </header>
+
+            <section class="riesgos__contenido">
+                <article class="riesgos__item">
+                    <h2 class="riesgos__nivel amarillo">4</h2>
+                    <p class="riesgos__descripcion">
+                        Materiales que por si mismos son capaces de explotar o detonar, o de reacciones explosivas a temperatura y presiones normales.
+                    </p>
+                </article>
+                <article class="riesgos__item">
+                    <h2 class="riesgos__nivel amarillo">3</h2>
+                    <p class="riesgos__descripcion">
+                        Materiales que por si mismos son capaces a detonación o de reacción explosiva que requiera de un fuerte agente iniciador o que deba calentarse en confinamiento antes de la ignición, o que reaccionan explosivamente con agua.
+                    </p>
+                </article>
+                <article class="riesgos__item">
+                    <h2 class="riesgos__nivel amarillo">2</h2>
+                    <p class="riesgos__descripcion">
+                        Materiales inestables que están listos a sufrir cambios quimicos violentes pero que no se detonan, tambien debe incluir aquellos materiales que reaccionan violentamente al contacto con el agua, o que pueden formar mezclas potencialmente explosivas con el agua.
+                    </p>
+                </article>
+                <article class="riesgos__item">
+                    <h2 class="riesgos__nivel amarillo">1</h2>
+                    <p class="riesgos__descripcion">
+                        Materiales que de por si solos son normalmente estables, pero que pueden llegar a ser inestables, sometidos a presiones y temperaturas elevadas o que pueden reaccionar en contacto con el agua, con alguna liberación de energía, aunque no en forma violenta.
+                    </p>
+                </article>
+                <article class="riesgos__item">
+                    <h2 class="riesgos__nivel amarillo">0</h2>
+                    <p class="riesgos__descripcion">
+                        Materiales que de por si solos son normalmente estables aun en condiciones de incendio y que no reaccionan con el agua.
+                    </p>
+                </article>
+            </section>
+        </article>
+    </main>
+    <script src="../js/riesgos.js"></script>
 </body>
 </html>

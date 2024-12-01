@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Ga+Maamli&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -129,8 +129,21 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 0 1.2rem;
+    padding: .5rem 1.2rem;
     position: fixed;
+}
+
+.header--riesgos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header--cuestionario {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
 }
 
 .header--center {
@@ -144,6 +157,16 @@
     background-color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+}
+
+.header__nav--fixed {
+    position: fixed !important;
+}
+
+
+.header__title {
+    font-size: 3rem;
+    font-family: "Bungee Spice", sans-serif;
 }
 
 .header__lista {
@@ -383,13 +406,26 @@
     color: blue;
 }
 
+/* RIESGOS */
+
+.main__riesgos {
+    height: 100vh;
+}
+
+.riesgos {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.riesgos__num {
+    font-size: 3rem;
+}
+
 
 /* EXAMEN */
-
-/* body { font-family: Arial, sans-serif; padding: 20px; }
-.pregunta { margin-bottom: 20px; }
-.opcion { display: block; margin: 5px 0; }
-#resultado { font-weight: bold; margin-top: 20px; } */
 
 .green {
     background-color: #00ffbf !important;
@@ -414,10 +450,11 @@
 #contenedor-pregunta > button {
     padding: .8rem;
     border-radius: 10px;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    font-weight: 700;
     border: none;
     cursor: pointer;
-    background-color: white;
+    background-color: rgb(207, 203, 203);
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 4px 6px rgba(0, 0, 0, .1);
     transition: .5s;
 }
@@ -463,11 +500,15 @@
 }
 
 #cuestionario {
-    padding-top: 4rem;
+    padding: 1rem;
     width: 90%;
     display: flex;
     flex-direction: column;
     gap: 15px;
+    height: 70vh;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 4px 6px rgba(0, 0, 0, .1);
 }
  
 
@@ -498,6 +539,11 @@
 
     .header--cuestionario {
         gap: 15px !important;
+    }
+
+    .header__title {
+        font-size: 2rem;
+        line-height: 1.5rem;
     }
 
     .header__nav {
@@ -551,6 +597,11 @@
 
     .main__proteccion {
         width: 80%;
+    }
+
+    #cuestionario {
+        padding-top: 2rem;
+        height: auto;
     }
 }
 

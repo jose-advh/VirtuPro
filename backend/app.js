@@ -2,6 +2,7 @@ import express from 'express';
 import session from 'express-session';
 import path from 'path';
 import cors from 'cors';
+import guardarIntento from './controllers/guardarIntento.js';
 import authController from './controllers/authController.js';
 import registerController from './controllers/registerController.js';
 import preguntas from './controllers/preguntasController.js';
@@ -33,6 +34,12 @@ app.use(express.static(path.join(process.cwd(), 'frontend')));
 app.post('/auth', authController.login);
 app.post('/register', registerController.register);
 app.get('/preguntas', preguntas);
+app.post('/guardarIntento', guardarIntento);
+
+app.use((req, res, next) => {
+    console.log('Sesión actual:', req.session);
+    next();
+});
 
 // Iniciar el servidor
 
