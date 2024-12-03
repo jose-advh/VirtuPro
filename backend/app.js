@@ -10,8 +10,10 @@ import preguntas from './controllers/preguntasController.js';
 const app = express();
 const PORT = 3000;
 
-app.use(cors());
-
+app.use(cors({
+    origin: 'http://localhost:5500', // Permitir solo este origen
+    credentials: true, // Permitir el envío de cookies y credenciales
+}));
 // Procesar datos del cliente
 
 app.use(express.json());

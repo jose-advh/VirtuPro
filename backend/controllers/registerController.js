@@ -2,9 +2,9 @@ import connect from '../configs/dbConnection.mjs';
 import bcrypt from 'bcrypt';
 
 const register = async (req, res) => {
-    const { identificacion, nombres, apellidos, correo, password, direccion, telefono, fechaNac } = req.body;
+    const { identificacion, nombres, apellidos, correo, password, direccion, telefono, fechaNac, lugarNac, motivoVisita, observacion } = req.body;
 
-    if (identificacion && nombres && apellidos && correo && password && direccion && telefono && fechaNac) {
+    if (identificacion && nombres && apellidos && correo && password && direccion && telefono && fechaNac && lugarNac && motivoVisita && observacion) {
         try {
             const db = await connect();
 
@@ -23,7 +23,12 @@ const register = async (req, res) => {
 
             // Insertar nuevo usuario en la bd
             const [result] = await db.execute(
-                'INSERT INTO empleados (identificacion, nombres, apellidos, correo, contrasena, direccion, telefono, fecha_nac) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', [identificacion, nombres, apellidos, correo, hashedPassword, direccion, telefono, fechaNac]
+                'INSERT INTO empleados (identificacion, nombres, apellidos, correo, contrasena, direccion, telefono, fecha_nac, lugar_nac) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)', [identificacion, nombres, apellidos, correo, hashedPassword, direccion, telefono, fechaNac, lugarNac]
+            );
+
+            await db.execute(
+                'INSERT INTO visita (id_usuario, motivo, observacion) VALUES (?, ?, ?)', 
+                [identificacion, motivoVisita, observacion]
             );
 
             res.status(201).json({ success: true, message: 'Usuario registrado correctamente'});

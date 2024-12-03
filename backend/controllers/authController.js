@@ -19,7 +19,7 @@ const login = async (req, res) => {
                 if (contraseñaCorrecta) {
                     req.session.loggedin = true;
                     req.session.username = user.nombres;
-                    req.session.idUsuario = identificacion;
+                    req.session.idUsuario = user.identificacion;
                 
                     res.json({ success: true, redirect: 'http://localhost:5500/frontend/pages/panel.html' });
                 } else {

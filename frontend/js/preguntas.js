@@ -5,7 +5,9 @@ let puntos = 0;
 
 async function cargarPreguntas() {
     try {
-        const respuesta = await fetch('http://localhost:3000/preguntas');
+        const respuesta = await fetch('http://localhost:3000/preguntas', {
+            credentials: 'include', 
+        });
         let todasLasPreguntas = await respuesta.json();
         todasLasPreguntas = mezclarArray(todasLasPreguntas);
         preguntas = todasLasPreguntas.slice(0, totalPreguntas);
@@ -50,7 +52,6 @@ function mostrarPregunta() {
         document.getElementById('resultadoFinal').classList.remove('ocultar')
         document.getElementById('cuestionario').classList.add('ocultar');
         finalizarCuestionario();
-        // TO-DO: INSERTAR DATOS DE: INTENTO A LA BASE DE DATOS
     }
 }
 
@@ -80,9 +81,9 @@ document.getElementById('siguiente').onclick = () => {
 cargarPreguntas();
 
 function finalizarCuestionario() {
-    const nota = puntos; // Usamos la variable `puntos` como nota
-    const valoracion = nota >= 7 ? 'Aprobado' : 'Desaprobado'; // Puedes ajustar el criterio
-    const horaEvaluacion = new Date().toISOString(); // Hora actual en formato ISO
+    const nota = puntos; 
+    const valoracion = nota >= 7 ? 'Aprobado' : 'Desaprobado'; 
+    const horaEvaluacion = new Date().toISOString(); 
 
     guardarIntento(nota, valoracion, horaEvaluacion);
 }
@@ -95,6 +96,7 @@ async function guardarIntento(nota, valoracion, horaEvaluacion) {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({ nota, valoracion, hora_evaluacion: horaEvaluacion }),
+            credentials: 'include', 
         });
 
         const data = await response.json();
@@ -107,4 +109,3 @@ async function guardarIntento(nota, valoracion, horaEvaluacion) {
         console.error('Error en el envío:', error);
     }
 }
-

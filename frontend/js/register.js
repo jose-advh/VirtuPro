@@ -8,8 +8,11 @@ document.getElementById('registerForm').addEventListener('submit', async (e) => 
     const correo = document.getElementById('correo').value;
     const direccion = document.getElementById('direccion').value;
     const fechaNac = document.getElementById('fechaNac').value;
+    const lugarNac = document.getElementById('lugarNac').value
     const password = document.getElementById('password').value;
     const telefono = document.getElementById('telefono').value;
+    const motivoVisita = document.getElementById('motivoVisita').value;
+    const observacion = document.getElementById('observacion').value;
     const formError = document.getElementById('formError');
 
     console.log('Contraseña recibida:', password);
@@ -22,7 +25,7 @@ document.getElementById('registerForm').addEventListener('submit', async (e) => 
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ identificacion, nombres, apellidos, correo, password, direccion, telefono, fechaNac }),
+            body: JSON.stringify({ identificacion, nombres, apellidos, correo, password, direccion, telefono, fechaNac, lugarNac, motivoVisita, observacion }),
         });
 
         // Respuesta del sv

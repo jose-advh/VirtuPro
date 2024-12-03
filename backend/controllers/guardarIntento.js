@@ -5,7 +5,8 @@ const router = express.Router();
 
 router.post('/guardarIntento', async (req, res) => {
     const { nota, valoracion, hora_evaluacion } = req.body;
-    const idUsuario = req.session.username; // Usuario guardado en la sesión en tu login.
+    const idUsuario = req.session.idUsuario; // Usuario guardado en la sesión en tu login.
+    console.log(idUsuario)
 
     if (!idUsuario) {
         return res.status(401).json({ success: false, message: 'Usuario no autenticado' });
