@@ -128,9 +128,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    padding: .5rem 1.2rem;
+    width: 80%;
+    margin: auto;
+    padding: 2.5rem 1.2rem;
+    right: 0;
+    left: 0;
     position: fixed;
+    height: 20vh;
 }
 
 .header--riesgos {
@@ -157,10 +161,8 @@
     background-color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-}
-
-.header__nav--fixed {
-    position: fixed !important;
+    position: fixed;
+    z-index: 1;
 }
 
 
@@ -178,6 +180,11 @@
 
 .header__item {
     font-weight: 600;
+    color: black;
+}
+
+.header__item:hover {
+    color: rgb(67, 67, 70);
 }
 
 .header__button {
@@ -185,6 +192,11 @@
     padding: 1rem;
     border-radius: 15px;
     color: white;
+    transition: .5s ease;
+}
+
+.header__button:hover {
+    background-color: #006bf7;
 }
 
 .main {
@@ -192,7 +204,6 @@
     justify-content: center;
     align-items: center;
 }
-
 
 .main--top {
     display: flex;
@@ -256,99 +267,111 @@
 
 /* PAGINA NOSOTROS */
 
-.main__info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin: auto;
-
-    padding-top: 6rem;
+.header--position {
+    position: static !important;
 }
 
-.info__section {
+.main__informacion {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    width: 70%;
+}
+
+.informacion__virtupro {
+    display: flex;
     align-items: center;
+}
+
+.main__description {
+    font-size: 1.1rem;
+}
+
+.informacion__desarrolladores {
+    display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    width: 100%;
-    height: 90vh;
-    padding: 1rem;
+    gap: 15px;
 }
 
-.info__section:first-child {
-    background: url('../imgs/bg_nosotros.jpeg') center/cover;
-    background-attachment: fixed;
+.main__titulo--nosotros {
+    font-size: 2.5rem;
+    font-family: 700;
 }
 
-.info__section:last-child { 
-    width: 90%;
-    margin: auto;
-}
-
-.info__bento {
-    display: flex; 
-    justify-content: center;
-    width: 90%;
-    align-items: center;
-    gap: 10px;
-}
-
-.bento__column {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.bento__card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    flex-direction: column;
-    padding: 1rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 
-    0 1px 3px rgba(0, 0, 0, 0.06);
-    width: 100%;
-    height: 14rem;
-    background-color: rgba(255, 197, 73, 0.863);
-}
-
-.bento__card--height {
-    height: 25rem !important;
-}
-
-.card_description {
+.main__subtitulo {
     font-size: 1.5rem;
+    font-weight: 400;
 }
 
-.info__card {
-    display: flex; 
-    flex-direction: column;
-    gap: 5px;
-    border-radius: 10px;
-    padding: .5rem;
-    background-color: white;
-    width: 20%;
+.main__img {
+    width: 25%;
+    filter: drop-shadow(
+        0 0 10px rgba(0, 0, 0, .8)
+    );
 }
 
-.card__header {
+.desarrolladores__card {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    border-radius: 15px;
+    background-color: rgba(128, 126, 255, 0.418);
+    box-shadow: 2px 5px 6px rgba(0, 0, 0, 0.1), 0px 4px 6px rgba(0, 0, 0, .1);
+
+}
+
+.desarrolladores__nombre {
     text-align: center;
+
 }
 
-.card__contentp {
-    
+.desarrolladores__contenido {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 15px;
+    gap: 15px;
 }
 
-.card__img {
-    border-radius: 5px;
+.desarrolladores__img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.desarrolladores__etiquetas {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.etiquetas {
+    padding: .2rem 1rem;
+    border-radius: 10px;
+    border: none;
+    background-color: white;
+}
+
+.desarrolladores_img {
     width: 100%;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* PANEL */
 
@@ -532,6 +555,7 @@
 
 @media (max-width: 900px) {
     .header {
+        width: 100%;
         padding: 1rem;
         flex-direction: column;
         line-height: 20px;
@@ -557,10 +581,12 @@
 
     .header__button {
         padding: .8rem;
-    }    
+    }
+    
 
     .header__item {
         font-size: .7rem;
+        font-weight: 900;
     }
 
     .main__titulo {
@@ -603,6 +629,14 @@
         padding-top: 2rem;
         height: auto;
     }
+
+    .informacion__virtupro {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    
+
 }
 
 @media (max-width: 350px) {
