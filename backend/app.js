@@ -11,15 +11,13 @@ const app = express();
 const PORT = 3000;
 
 app.use(cors({
-    origin: 'http://localhost:5500', // Permitir solo este origen
-    credentials: true, // Permitir el envío de cookies y credenciales
+    origin: ['http://127.0.0.1:5500', 'http://localhost:5500'], 
+    methods: ['GET', 'POST'],
+    credentials: true, 
 }));
-// Procesar datos del cliente
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: true })); // Procesar forms
-
-// Configuración de las sesiones
+app.use(express.urlencoded({ extended: true })); 
 
 app.use(session({
     secret: 'secreto',
@@ -27,11 +25,7 @@ app.use(session({
     saveUninitialized: true,
 }));
 
-
 app.use(express.static(path.join(process.cwd(), 'frontend')));
-
-
-//Rutas 
 
 app.post('/auth', authController.login);
 app.post('/register', registerController.register);
@@ -42,8 +36,6 @@ app.use((req, res, next) => {
     console.log('Sesión actual:', req.session);
     next();
 });
-
-// Iniciar el servidor
 
 app.listen(PORT, () => {
     console.log(`Servidor corriendo en http://localhost:${PORT}`);
